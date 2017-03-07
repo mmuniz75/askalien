@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title></title>
+  <script src="./search_libs/jquery_and_modernizr.js"></script>
+
+  <script type="text/javascript">
+                //<![CDATA[
+                window.gon = {};
+          
+//]]>
+  </script>
+  <link rel="stylesheet" media="screen" href="./search_libs/public_styles.css">
+  <link rel="stylesheet" media="screen" href="./search_libs/blog_styles.css">
+  
+
+</head>
+
+<body class="layout">
+  <div class="layout_layer">
+
+    <main class="layout-main">
+
+      <div class="grid-row has-top_border is-gray">
+        <div class="grid-row-inner has-big_padding">
+          <div class="iquestions_list">
+            <div class="iquestion-wrapper" data-view="interview_question#content">
+              <div class="iquestion-inner_border">
+                <div class="iquestion-inner" data-role="clicking-area">
+                  <div class="iquestion-icon"></div>
+                  <div class="iquestion-info">
+                    <div class="iquestion-info_body">
+                      <p>What are lately called beings seen by you as "night walkers" ?</p>
+                    </div>
+                  </div>
+                  <div class="iquestion-footer">
+                    <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
+                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="iquestion_answer">
+                <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
+                  <div class="iquestion_answer-inner">
+                    <div class="iquestion_answer-icon"></div>
+                    <div class="iquestion_answer-body content_body is-small">
+                      <p>Well, these beings are descended from a race of insects named Zigs, very intelligent and possess a great ability of telekinesis. </p>
+
+                      <p>They keep a few bases of studies here on your planet, usually built on deposits of fresh water. </p>
+                      <p>They are friendly and totally harmless to you. </p>
+
+                      
+                    </div>
+                  </div>
+                  <div class="iquestion_answer-footer"><a class="iquestion_answer-add_comment" data-role="add-comment-link">Comment</a>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="iquestion_comment_form-wrapper">
+                <form onsubmit="commentForm.style='display:none';confirmation.style='display:inline'" class="simple_form iquestion_comment_form" autocomplete="off" id="interview_question_comment"
+                  novalidate="novalidate" action="" accept-charset="UTF-8" data-remote="true" method="post">
+                  <input name="utf8" type="hidden" value="✓">
+                  <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm">
+                    <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
+                      <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
+                        type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
+                    <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
+                      <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
+                        type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
+                    <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
+                      data-view="ui#autoexpand">
+                      <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
+                        name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
+                      <span
+                        class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>) are required</span>
+                    </div>
+                    <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
+                    <div class="iquestion_comment_form-footer">
+                      <div class="iquestion_comment_form-footer_right">
+                        <div class="form-actions is-right_aligned no_flexbox-form_submit">
+                          <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
+                            type="submit">Submit a Comment</button>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="iquestion_comment_form-thank" id="confirmation">
+                    <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
+                    <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+    </main>
+
+    </div>
+
+    <script src="./search_libs/public.js"></script>
+    <script src="./search_libs/blog.js"></script>
+   
+    
+</body>
+
+</html>
