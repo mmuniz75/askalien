@@ -7,313 +7,360 @@
   <script src="./search_libs/jquery_and_modernizr.js"></script>
 
   <script type="text/javascript">
-                //<![CDATA[
-                window.gon = {};
-          
+    //<![CDATA[
+    window.gon = {};
+
 //]]>
   </script>
   <link rel="stylesheet" media="screen" href="./search_libs/public_styles.css">
   <link rel="stylesheet" media="screen" href="./search_libs/blog_styles.css">
-  
+
 
 </head>
 
+<style type="text/css">
+
+#q { 
+   padding: 5px; 
+   font-size: 2em; 
+   line-height: 30px 
+}
+  
+</style>
+
 <body class="layout">
+
   <div class="layout_layer">
 
     <main class="layout-main">
-
+   
+   
       <div class="grid-row has-top_border is-gray">
         <div class="grid-row-inner has-big_padding">
-          <div class="iquestions_list">
-            <div class="iquestion-wrapper" data-view="interview_question#content">
-              <div class="iquestion-inner_border">
-                <div class="iquestion-inner" data-role="clicking-area">
-                  <div class="iquestion-icon"></div>
-                  <div class="iquestion-info">
-                    <div class="iquestion-info_body">
-                      <p>What are lately called beings seen by you as "night walkers" ?</p>
-                    </div>
-                  </div>
-                  <div class="iquestion-footer">
-                    <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
-                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="iquestion_answer">
-                <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
-                  <div class="iquestion_answer-inner">
-                    <div class="iquestion_answer-icon"></div>
-                    <div class="iquestion_answer-body content_body is-small">
-                      <p>Well, these beings are descended from a race of insects named Zigs, very intelligent and possess a great ability of telekinesis. </p>
 
-                      <p>They keep a few bases of studies here on your planet, usually built on deposits of fresh water. </p>
-                      <p>They are friendly and totally harmless to you. </p>
 
-                      
-                    </div>
-                  </div>
-                  <div class="iquestion_answer-footer"><a class="iquestion_answer-add_comment" data-role="add-comment-link">Comment</a>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="iquestion_comment_form-wrapper">
-                <form onsubmit="commentForm.style='display:none';confirmation.style='display:inline'" class="simple_form iquestion_comment_form" autocomplete="off" id="interview_question_comment"
-                  novalidate="novalidate" action="" accept-charset="UTF-8" data-remote="true" method="post">
-                  <input name="utf8" type="hidden" value="✓">
-                  <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm">
-                    <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
-                      <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
-                        type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
-                    <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
-                      <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
-                        type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
-                    <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
-                      data-view="ui#autoexpand">
-                      <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
-                        name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
-                      <span
-                        class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>) are required</span>
-                    </div>
-                    <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
-                    <div class="iquestion_comment_form-footer">
-                      <div class="iquestion_comment_form-footer_right">
-                        <div class="form-actions is-right_aligned no_flexbox-form_submit">
-                          <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
-                            type="submit">Submit a Comment</button>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <div class="iquestion_comment_form-thank" id="confirmation">
-                    <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
-                    <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
-                  </div>
-                </form>
-              </div>
-            </div>
-
-            <!-- Question 2 -->
-            <div class="iquestion-wrapper" data-view="interview_question#content">
-              <div class="iquestion-inner_border">
-                <div class="iquestion-inner" data-role="clicking-area">
-                  <div class="iquestion-icon"></div>
-                  <div class="iquestion-info">
-                    <div class="iquestion-info_body">
-                      <p>Is the planet Earth is undergoing a transformation in the near future?</p>
-                    </div>
-                  </div>
-                  <div class="iquestion-footer">
-                    <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
-                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="iquestion_answer">
-                <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
-                  <div class="iquestion_answer-inner">
-                    <div class="iquestion_answer-icon"></div>
-                    <div class="iquestion_answer-body content_body is-small">
-                      <p>It is an era of change for the Earth, including the rest of  the planets in the solar system. 
-                        <br> 
-                        Each planet goes thru it's own cyclical changes that increase it's developmental possiblities for colonization. </p>
-                    </div>
-                  </div>
-                  <div class="iquestion_answer-footer"><a class="iquestion_answer-add_comment" data-role="add-comment-link">Comment</a>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="iquestion_comment_form-wrapper">
-                <form onsubmit="commentForm2.style='display:none';confirmation2.style='display:inline'" class="simple_form iquestion_comment_form" autocomplete="off" id="interview_question_comment"
-                  novalidate="novalidate" action="" accept-charset="UTF-8" data-remote="true" method="post">
-                  <input name="utf8" type="hidden" value="✓">
-                  <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm2">
-                    <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
-                      <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
-                        type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
-                    <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
-                      <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
-                        type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
-                    <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
-                      data-view="ui#autoexpand">
-                      <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
-                        name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
-                      <span
-                        class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>) are required</span>
-                    </div>
-                    <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
-                    <div class="iquestion_comment_form-footer">
-                      <div class="iquestion_comment_form-footer_right">
-                        <div class="form-actions is-right_aligned no_flexbox-form_submit">
-                          <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
-                            type="submit">Submit a Comment</button>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <div class="iquestion_comment_form-thank" id="confirmation2">
-                    <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
-                    <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
-                  </div>
-                </form>
-              </div>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="iquestion-wrapper" data-view="interview_question#content">
-              <div class="iquestion-inner_border">
-                <div class="iquestion-inner" data-role="clicking-area">
-                  <div class="iquestion-icon"></div>
-                  <div class="iquestion-info">
-                    <div class="iquestion-info_body">
-                      <p>Where did the humans on Earth orginate from?</p>
-                    </div>
-                  </div>
-                  <div class="iquestion-footer">
-                    <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
-                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="iquestion_answer">
-                <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
-                  <div class="iquestion_answer-inner">
-                    <div class="iquestion_answer-icon"></div>
-                    <div class="iquestion_answer-body content_body is-small">
-                      <p>All the different ethnic groups found today on Earth came from different places of the universe.
-Earth has been occupied by various human races beginning around 65 million years ago when the Earth had reached a developmental stage which was able to support humanoid life.
-The Earth has hosted vast numbers of different human races that came to Earth for many different reasons.
-Some were exiled from  their home planets while others came to colonize or just explore.
-There are many threads in the doctrinal folklore that mentions these humanoids as exiled from Capella, descendants of Anunaquis, etc... 
-In fact, all the different ethnic groups found today on Earth came from different places of the universe to live and thrive in this Era that is ending now, living on planet Earth with the sole purpose of integration in a larger community.
-Like the Earth, there are hundreds of millions of planets serving as the cradle of civilization to humanoids at various developmental stages. </p>
-                    </div>
-                  </div>
-                  <div class="iquestion_answer-footer"><a class="iquestion_answer-add_comment" data-role="add-comment-link">Comment</a>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="iquestion_comment_form-wrapper">
-                <form onsubmit="commentForm3.style='display:none';confirmation3.style='display:inline'" class="simple_form iquestion_comment_form" autocomplete="off" id="interview_question_comment"
-                  novalidate="novalidate" action="" accept-charset="UTF-8" data-remote="true" method="post">
-                  <input name="utf8" type="hidden" value="✓">
-                  <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm3">
-                    <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
-                      <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
-                        type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
-                    <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
-                      <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
-                        type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
-                    <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
-                      data-view="ui#autoexpand">
-                      <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
-                        name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
-                      <span
-                        class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>) are required</span>
-                    </div>
-                    <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
-                    <div class="iquestion_comment_form-footer">
-                      <div class="iquestion_comment_form-footer_right">
-                        <div class="form-actions is-right_aligned no_flexbox-form_submit">
-                          <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
-                            type="submit">Submit a Comment</button>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <div class="iquestion_comment_form-thank" id="confirmation3">
-                    <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
-                    <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
-                  </div>
-                </form>
-              </div>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="iquestion-wrapper" data-view="interview_question#content">
-              <div class="iquestion-inner_border">
-                <div class="iquestion-inner" data-role="clicking-area">
-                  <div class="iquestion-icon"></div>
-                  <div class="iquestion-info">
-                    <div class="iquestion-info_body">
-                      <p>Can an Earth human physically transfer and live on another planet?</p>
-                    </div>
-                  </div>
-                  <div class="iquestion-footer">
-                    <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
-                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="iquestion_answer">
-                <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
-                  <div class="iquestion_answer-inner">
-                    <div class="iquestion_answer-icon"></div>
-                    <div class="iquestion_answer-body content_body is-small">
-                      <p>Yes, but only when the planet and the person have compatible frequencies or in other words, a persons life energy or aura matches that of the planet.  
-The term "frequency" is the level that an energy vibrates at. 
-As a race becomes more advanced their frequency changes and becomes faster.
-As in the case of the Maya, Aztecs, Incas, Egyptians, Sumerian, Vedas, and other civilizations that seemed to have suddenly vanished, these are examples of races whos frequency became faster then that of the Earth, either died suddenly and reincarnated on a planet that was compatible with them or were physically transfered to a more compatible planet.
-The descendants of those races that are left on earth are actually crossbreeds of the original race that were not in the right frequency for that transfer at that time.   </p>
-                    </div>
-                  </div>
-                  <div class="iquestion_answer-footer"><a class="iquestion_answer-add_comment" data-role="add-comment-link">Comment</a>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="iquestion_comment_form-wrapper">
-                <form onsubmit="commentForm4.style='display:none';confirmation4.style='display:inline'" class="simple_form iquestion_comment_form" autocomplete="off" id="interview_question_comment"
-                  novalidate="novalidate" action="" accept-charset="UTF-8" data-remote="true" method="post">
-                  <input name="utf8" type="hidden" value="✓">
-                  <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm4">
-                    <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
-                      <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
-                        type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
-                    <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
-                      <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
-                        type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
-                    <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
-                      data-view="ui#autoexpand">
-                      <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
-                        name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
-                      <span
-                        class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>) are required</span>
-                    </div>
-                    <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
-                    <div class="iquestion_comment_form-footer">
-                      <div class="iquestion_comment_form-footer_right">
-                        <div class="form-actions is-right_aligned no_flexbox-form_submit">
-                          <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
-                            type="submit">Submit a Comment</button>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <div class="iquestion_comment_form-thank" id="confirmation4">
-                    <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
-                    <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
-                  </div>
-                </form>
-              </div>
+            <div >
+                <input id="q" class="string required input" x-autocompletetype="name" placeholder="What is your question ?"
+                  type="search"  >
+                 <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
+                 <br>
+                  <button onclick="questions.style='display:inline'" id="b" class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
+                      >Have your answer</button>
+                
             </div>
 
 
+       </div>
+      </div>
+  </div>
+
+  <div class="grid-row has-top_border is-gray" style="display:none" id="questions">
+    <div class="grid-row-inner has-big_padding">
+
+      <div class="iquestions_list">
+        <div class="iquestion-wrapper" data-view="interview_question#content">
+          <div class="iquestion-inner_border">
+            <div class="iquestion-inner" data-role="clicking-area">
+              <div class="iquestion-icon"></div>
+              <div class="iquestion-info">
+                <div class="iquestion-info_body">
+                  <p>What are lately called beings seen by you as "night walkers" ?</p>
+                </div>
+              </div>
+              <div class="iquestion-footer">
+                <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
+                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="iquestion_answer">
+            <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
+              <div class="iquestion_answer-inner">
+                <div class="iquestion_answer-icon"></div>
+                <div class="iquestion_answer-body content_body is-small">
+                  <p>Well, these beings are descended from a race of insects named Zigs, very intelligent and possess a great
+                    ability of telekinesis. </p>
+
+                  <p>They keep a few bases of studies here on your planet, usually built on deposits of fresh water. </p>
+                  <p>They are friendly and totally harmless to you. </p>
+
+
+                </div>
+              </div>
+              <div class="iquestion_answer-footer"><a class="iquestion_answer-add_comment" data-role="add-comment-link">Comment</a>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="iquestion_comment_form-wrapper">
+            <form onsubmit="commentForm.style='display:none';confirmation.style='display:inline'" class="simple_form iquestion_comment_form"
+              autocomplete="off" id="interview_question_comment" novalidate="novalidate" action="" accept-charset="UTF-8" data-remote="true"
+              method="post">
+              <input name="utf8" type="hidden" value="✓">
+              <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm">
+                <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
+                  <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
+                    type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
+                <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
+                  <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
+                    type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
+                <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
+                  data-view="ui#autoexpand">
+                  <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
+                    name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
+                  <span class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>)
+                  are required</span>
+                </div>
+                <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
+                <div class="iquestion_comment_form-footer">
+                  <div class="iquestion_comment_form-footer_right">
+                    <div class="form-actions is-right_aligned no_flexbox-form_submit">
+                      <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
+                        type="submit">Submit a Comment</button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="iquestion_comment_form-thank" id="confirmation">
+                <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
+                <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
+              </div>
+            </form>
           </div>
         </div>
+
+        <!-- Question 2 -->
+        <div class="iquestion-wrapper" data-view="interview_question#content">
+          <div class="iquestion-inner_border">
+            <div class="iquestion-inner" data-role="clicking-area">
+              <div class="iquestion-icon"></div>
+              <div class="iquestion-info">
+                <div class="iquestion-info_body">
+                  <p>Is the planet Earth is undergoing a transformation in the near future?</p>
+                </div>
+              </div>
+              <div class="iquestion-footer">
+                <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
+                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="iquestion_answer">
+            <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
+              <div class="iquestion_answer-inner">
+                <div class="iquestion_answer-icon"></div>
+                <div class="iquestion_answer-body content_body is-small">
+                  <p>It is an era of change for the Earth, including the rest of the planets in the solar system.
+                    <br> Each planet goes thru it's own cyclical changes that increase it's developmental possiblities for
+                    colonization.
+                  </p>
+                </div>
+              </div>
+              <div class="iquestion_answer-footer"><a class="iquestion_answer-add_comment" data-role="add-comment-link">Comment</a>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="iquestion_comment_form-wrapper">
+            <form onsubmit="commentForm2.style='display:none';confirmation2.style='display:inline'" class="simple_form iquestion_comment_form"
+              autocomplete="off" id="interview_question_comment" novalidate="novalidate" action="" accept-charset="UTF-8" data-remote="true"
+              method="post">
+              <input name="utf8" type="hidden" value="✓">
+              <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm2">
+                <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
+                  <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
+                    type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
+                <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
+                  <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
+                    type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
+                <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
+                  data-view="ui#autoexpand">
+                  <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
+                    name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
+                  <span class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>)
+                  are required
+                  </span>
+                </div>
+                <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
+                <div class="iquestion_comment_form-footer">
+                  <div class="iquestion_comment_form-footer_right">
+                    <div class="form-actions is-right_aligned no_flexbox-form_submit">
+                      <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
+                        type="submit">Submit a Comment</button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="iquestion_comment_form-thank" id="confirmation2">
+                <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
+                <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="iquestion-wrapper" data-view="interview_question#content">
+          <div class="iquestion-inner_border">
+            <div class="iquestion-inner" data-role="clicking-area">
+              <div class="iquestion-icon"></div>
+              <div class="iquestion-info">
+                <div class="iquestion-info_body">
+                  <p>Where did the humans on Earth orginate from?</p>
+                </div>
+              </div>
+              <div class="iquestion-footer">
+                <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
+                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="iquestion_answer">
+            <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
+              <div class="iquestion_answer-inner">
+                <div class="iquestion_answer-icon"></div>
+                <div class="iquestion_answer-body content_body is-small">
+                  <p>All the different ethnic groups found today on Earth came from different places of the universe. Earth
+                    has been occupied by various human races beginning around 65 million years ago when the Earth had reached
+                    a developmental stage which was able to support humanoid life. The Earth has hosted vast numbers of different
+                    human races that came to Earth for many different reasons. Some were exiled from their home planets while
+                    others came to colonize or just explore. There are many threads in the doctrinal folklore that mentions
+                    these humanoids as exiled from Capella, descendants of Anunaquis, etc... In fact, all the different ethnic
+                    groups found today on Earth came from different places of the universe to live and thrive in this Era
+                    that is ending now, living on planet Earth with the sole purpose of integration in a larger community.
+                    Like the Earth, there are hundreds of millions of planets serving as the cradle of civilization to humanoids
+                    at various developmental stages. </p>
+                </div>
+              </div>
+              <div class="iquestion_answer-footer"><a class="iquestion_answer-add_comment" data-role="add-comment-link">Comment</a>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="iquestion_comment_form-wrapper">
+            <form onsubmit="commentForm3.style='display:none';confirmation3.style='display:inline'" class="simple_form iquestion_comment_form"
+              autocomplete="off" id="interview_question_comment" novalidate="novalidate" action="" accept-charset="UTF-8" data-remote="true"
+              method="post">
+              <input name="utf8" type="hidden" value="✓">
+              <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm3">
+                <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
+                  <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
+                    type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
+                <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
+                  <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
+                    type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
+                <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
+                  data-view="ui#autoexpand">
+                  <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
+                    name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
+                  <span class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>)
+                  are required
+                  </span>
+                </div>
+                <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
+                <div class="iquestion_comment_form-footer">
+                  <div class="iquestion_comment_form-footer_right">
+                    <div class="form-actions is-right_aligned no_flexbox-form_submit">
+                      <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
+                        type="submit">Submit a Comment</button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="iquestion_comment_form-thank" id="confirmation3">
+                <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
+                <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="iquestion-wrapper" data-view="interview_question#content">
+          <div class="iquestion-inner_border">
+            <div class="iquestion-inner" data-role="clicking-area">
+              <div class="iquestion-icon"></div>
+              <div class="iquestion-info">
+                <div class="iquestion-info_body">
+                  <p>Can an Earth human physically transfer and live on another planet?</p>
+                </div>
+              </div>
+              <div class="iquestion-footer">
+                <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
+                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="iquestion_answer">
+            <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
+              <div class="iquestion_answer-inner">
+                <div class="iquestion_answer-icon"></div>
+                <div class="iquestion_answer-body content_body is-small">
+                  <p>Yes, but only when the planet and the person have compatible frequencies or in other words, a persons life
+                    energy or aura matches that of the planet. The term "frequency" is the level that an energy vibrates
+                    at. As a race becomes more advanced their frequency changes and becomes faster. As in the case of the
+                    Maya, Aztecs, Incas, Egyptians, Sumerian, Vedas, and other civilizations that seemed to have suddenly
+                    vanished, these are examples of races whos frequency became faster then that of the Earth, either died
+                    suddenly and reincarnated on a planet that was compatible with them or were physically transfered to
+                    a more compatible planet. The descendants of those races that are left on earth are actually crossbreeds
+                    of the original race that were not in the right frequency for that transfer at that time. </p>
+                </div>
+              </div>
+              <div class="iquestion_answer-footer"><a class="iquestion_answer-add_comment" data-role="add-comment-link">Comment</a>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="iquestion_comment_form-wrapper">
+            <form onsubmit="commentForm4.style='display:none';confirmation4.style='display:inline'" class="simple_form iquestion_comment_form"
+              autocomplete="off" id="interview_question_comment" novalidate="novalidate" action="" accept-charset="UTF-8" data-remote="true"
+              method="post">
+              <input name="utf8" type="hidden" value="✓">
+              <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm4">
+                <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
+                  <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
+                    type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
+                <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
+                  <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
+                    type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
+                <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
+                  data-view="ui#autoexpand">
+                  <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
+                    name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
+                  <span class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>)
+                  are required
+                  </span>
+                </div>
+                <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment"><textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment"></textarea></div>
+                <div class="iquestion_comment_form-footer">
+                  <div class="iquestion_comment_form-footer_right">
+                    <div class="form-actions is-right_aligned no_flexbox-form_submit">
+                      <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
+                        type="submit">Submit a Comment</button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="iquestion_comment_form-thank" id="confirmation4">
+                <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
+                <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
       </div>
-    </main>
-
     </div>
+  </div>
+  </main>
 
-    <script src="./search_libs/public.js"></script>
-    <script src="./search_libs/blog.js"></script>
-   
-    
+  </div>
+
+  <script src="./search_libs/public.js"></script>
+  <script src="./search_libs/blog.js"></script>
+
+
 </body>
 
 </html>
