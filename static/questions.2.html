@@ -1,5 +1,47 @@
+<!DOCTYPE html>
+<html>
 
- 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Ask Alien 2</title>
+  <script src="./search_libs/jquery_and_modernizr.js"></script>
+
+  <script type="text/javascript">
+    //<![CDATA[
+    window.gon = {};
+
+//]]>
+  function showAnswer(answerDiv,questionDiv){
+        answerDiv.removeClass("iquestion_answer");
+        answerDiv.addClass("iquestion_answer-animation");
+        questionDiv.addClass("is-active");
+
+    }
+
+    function showCommnent(commendDiv){
+          commendDiv.fadeIn()
+    }
+  </script>
+  <link rel="stylesheet" media="screen" href="./search_libs/public_styles.css">
+  <link rel="stylesheet" media="screen" href="./search_libs/blog_styles.css">
+
+ <script>  
+
+
+</script>
+
+</head>
+
+<style type="text/css">
+  #q {
+    padding: 5px;
+    font-size: 2em;
+    line-height: 30px
+  }
+</style>
+
+<body class="layout">
+
   <div class="layout_layer">
 
     <main class="layout-main">
@@ -24,7 +66,7 @@
       </div>
 
 
-      <div class="grid-row has-top_border is-gray" id="questions" style='display:none'>
+      <div class="grid-row has-top_border is-gray"  id="questions">
         <div class="grid-row-inner has-big_padding">
 
           <div class="iquestions_list">
@@ -40,12 +82,13 @@
                     </div>
                   </div>
                   <div class="iquestion-footer">
-                    <a class="iquestion-answer_link" rel="noopener noreferrer"><span class="iquestion-answer_icon"></span>
-                    <span class="iquestion-answer_text" data-role="show-hide-link">View the answer →</span></a>
+                    <a class="iquestion-answer_link" rel="noopener noreferrer" >
+                      <span class="iquestion-answer_icon"></span>
+                    <span class="iquestion-answer_text" >View the answer →</span></a>
                   </div>
                 </div>
               </div>
-              <div class="iquestion_answer" >
+              <div class="iquestion_answer iquestion_answer-animation">
                 <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
                   <div class="iquestion_answer-inner">
                     <div class="iquestion_answer-icon"></div>
@@ -60,12 +103,12 @@
                     </div>
                   </div>
                   <div class="iquestion_answer-footer">
-                      <a class="iquestion_answer-add_comment" data-role="add-comment-link" onclick='showCommnent($(".iquestion_comment_form-wrapper"))'>Comment</a>
+                      <a class="iquestion_answer-add_comment" onclick='showCommnent($(".iquestion_comment_form-wrapper"))'>Comment</a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
               </div>
-              <div class="iquestion_comment_form-wrapper" >
+              <div class="iquestion_comment_form-wrapper">
                 <form onsubmit="commentForm.style='display:none';confirmation.style='display:inline'" class="simple_form iquestion_comment_form"
                   autocomplete="off" id="interview_question_comment" novalidate="novalidate" action="" accept-charset="UTF-8"
                   data-remote="true" method="post">
@@ -108,5 +151,11 @@
         </div>
       </div>
     </main>
+
   </div>
   
+ 
+
+</body>
+
+</html>

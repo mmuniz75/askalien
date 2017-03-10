@@ -15,17 +15,38 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
+    
+    <link rel="stylesheet" media="screen" href="/app/assets/css/blog_styles.css">
+    <link rel="stylesheet" media="screen" href="/app/assets/css/public_styles.css">
+    
+    
 
     <!-- Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <script>
       System.import('app').catch(function(err){ console.error(err); });
+
+      function showAnswer(answerDiv,questionDiv){
+        answerDiv.removeClass("iquestion_answer");
+        answerDiv.addClass("iquestion_answer-animation");
+        questionDiv.addClass("is-active");
+
+    }
+
+    function showCommnent(commendDiv){
+          commendDiv.fadeIn()
+    }
     </script>
+
+   
+ <script src="app/assets/js/jquery_and_modernizr.js"></script>
+
 </head>
 
-<body>
-    <pm-app></pm-app>
-    Starter files testing
+<body class="layout">
+    <pm-app>
+    </pm-app>
 </body>
 
+  
 </html>
