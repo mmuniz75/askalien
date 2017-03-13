@@ -10,13 +10,13 @@
 
 
           <div>
-            <input id="q" class="string required input" x-autocompletetype="name" placeholder="What is your question ?" type="search">
+            <input type="text" [(ngModel)]='userQuestion' id="q" class="string required input" x-autocompletetype="name" placeholder="What is your question ?" type="search">
             <div class="robot_protection_input form-field js-field_wrapper robot_protection optional interview_question_comment_comment">
-              <textarea maxlength="0" name="interview_question_comment[comment]" id="interview_question_comment_comment">
+              <textarea  maxlength="0" >
                 </textarea>
             </div>
             <br>
-            <button onclick="questions.style='display:inline'" id="b" class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button">Have your answer</button>
+            <button (click)='searchQuestion()' id="b" class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button">Have your answer</button>
 
           </div>
 
@@ -24,19 +24,19 @@
       </div>
 
 
-      <div class="grid-row has-top_border is-gray" id="questions" style='display:none'>
+      <div class="grid-row has-top_border is-gray" id="questions" *ngIf='questions && questions.length' >
         <div class="grid-row-inner has-big_padding">
 
           <div class="iquestions_list">
 
 
-            <div class="iquestion-wrapper" data-view="interview_question#content">
+            <div class="iquestion-wrapper" data-view="interview_question#content" *ngFor='let question of questions' >
               <div class="iquestion-inner_border">
                 <div class="iquestion-inner" data-role="clicking-area" onclick='showAnswer($(".iquestion_answer"),$(".iquestion-wrapper"))'>
                   <div class="iquestion-icon"></div>
                   <div class="iquestion-info">
                     <div class="iquestion-info_body">
-                      <p>What are lately called beings seen by you as "night walkers" ?</p>
+                      <p>{{question.question}} ?</p>
                     </div>
                   </div>
                   <div class="iquestion-footer">

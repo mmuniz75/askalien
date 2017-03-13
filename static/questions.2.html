@@ -7,10 +7,7 @@
   <script src="./search_libs/jquery_and_modernizr.js"></script>
 
   <script type="text/javascript">
-    //<![CDATA[
-    window.gon = {};
-
-//]]>
+  
   function showAnswer(answerDiv,questionDiv){
         answerDiv.removeClass("iquestion_answer");
         answerDiv.addClass("iquestion_answer-animation");
@@ -74,7 +71,7 @@
 
             <div class="iquestion-wrapper" data-view="interview_question#content">
               <div class="iquestion-inner_border">
-                <div class="iquestion-inner" data-role="clicking-area" onclick='showAnswer($(".iquestion_answer"),$(".iquestion-wrapper"))'>
+                <div class="iquestion-inner" onclick='showAnswer($(".iquestion_answer"),$(".iquestion-wrapper"))'>
                   <div class="iquestion-icon"></div>
                   <div class="iquestion-info">
                     <div class="iquestion-info_body">
@@ -88,8 +85,8 @@
                   </div>
                 </div>
               </div>
-              <div class="iquestion_answer iquestion_answer-animation">
-                <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
+              <div class="iquestion_answer">
+                <div class="iquestion_answer-wrapper">
                   <div class="iquestion_answer-inner">
                     <div class="iquestion_answer-icon"></div>
                     <div class="iquestion_answer-body content_body is-small">
