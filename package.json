@@ -5,8 +5,8 @@
   "private": true,
   "main": "start.js",
   "scripts": {
-        "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-        "start_prod": "node --use_strict start.js",
+        "start_dev": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+        "start": "node --use_strict start.js",
         "tsc": "tsc",
         "tsc:w": "tsc -w",
         "lint": "tslint ./app/**/*.ts -t verbose",
