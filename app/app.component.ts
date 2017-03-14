@@ -20,6 +20,9 @@ export class AppComponent {
     public static LABEL_ANSWER_VIEW = 'View the answer →';
     public static LABEL_ANSWER_HIDE = 'Hide Answer';
 
+    public static LABEL_COMMENT_VIEW = 'Comment';
+    public static LABEL_COMMENT_HIDE = 'Close Comment';
+
     questions: IQuestion[];
     userQuestion: String;
     errorMessage: string;
@@ -33,27 +36,23 @@ export class AppComponent {
             error => this.errorMessage = <any>error);
     }
 
+    getContent(question: IQuestion): String {
+        let content = question.answer ? question.answer.content : '';
+        return content;
+    }
 
-    showHidenAnswer(question: IQuestion) {
-        if( !question.isActive)
-            this.showAnswer(question);
-        else    
-            this.hideAnswer(question);
-    }    
-
-    showAnswer(question: IQuestion) {
+    switchAnswer(question: IQuestion) {
         if (!question.answer) {
             this._askService.getAnswer(question.number,this.userQuestion)
                 .subscribe(answer => question.answer = answer,
                            error => this.errorMessage = <any>error)
                 ;
         }
-        question.isActive = true;        
-    }
 
-    hideAnswer(question: IQuestion) {
-        question.isActive = false;
-    }
+        question.isActive = !question.isActive; 
+        if(!question.isActive)
+            question.isCommentActive = false;
+    }    
 
     getQuestionClass(question: IQuestion): String {
         return question.isActive ? AppComponent.ACTIVE_QUESTION_CLASS : AppComponent.DEACTIVE_QUESTION_CLASS;
@@ -63,13 +62,20 @@ export class AppComponent {
         return question.isActive ? AppComponent.DISPLAY_ANSWER_CLASS : AppComponent.HIDE_ANSWER_CLASS;
     }
 
-    getContent(question: IQuestion): String {
-        let content = question.answer ? question.answer.content : '';
-        return content;
-    }
-
     getLabelAnwerLink(question: IQuestion) : String{
         return question.isActive?AppComponent.LABEL_ANSWER_HIDE:AppComponent.LABEL_ANSWER_VIEW;
+    }
+
+     getLabelCommnetLink(question: IQuestion) : String{
+        return question.isCommentActive?AppComponent.LABEL_COMMENT_HIDE:AppComponent.LABEL_COMMENT_VIEW;
+    }
+
+    switchComment(question: IQuestion){
+        question.isCommentActive = !question.isCommentActive;
+    }
+
+    sendComment(question: IQuestion):void{
+        question.isCommentSent = true;
     }
 
 }

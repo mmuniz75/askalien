@@ -30,9 +30,9 @@
           <div class="iquestions_list">
 
 
-            <div [class]='getQuestionClass(question)' data-view="interview_question#content" *ngFor='let question of questions' >
+            <div [class]='getQuestionClass(question)'  *ngFor='let question of questions' >
               <div class="iquestion-inner_border">
-                <div class="iquestion-inner" (click)='showHidenAnswer(question)'>
+                <div class="iquestion-inner" (click)='switchAnswer(question)'>
                   <div class="iquestion-icon"></div>
                   <div class="iquestion-info">
                     <div class="iquestion-info_body">
@@ -46,7 +46,7 @@
                 </div>
               </div>
               <div [class]='getAnswerClass(question)' >
-                <div class="iquestion_answer-wrapper" data-role="iquestion-answer">
+                <div class="iquestion_answer-wrapper" >
                   <div class="iquestion_answer-inner">
                     <div class="iquestion_answer-icon"></div>
                     <div class="iquestion_answer-body content_body is-small">
@@ -57,17 +57,17 @@
                     </div>
                   </div>
                   <div class="iquestion_answer-footer">
-                      <a class="iquestion_answer-add_comment" data-role="add-comment-link" onclick='showCommnent($(".iquestion_comment_form-wrapper"))'>Comment</a>
+                      <a class="iquestion_answer-add_comment" (click)='switchComment(question)' [innerHtml]='getLabelCommnetLink(question)'></a>
                     <div class="clearfix"></div>
                   </div>
                 </div>
               </div>
-              <div class="iquestion_comment_form-wrapper" >
-                <form onsubmit="commentForm.style='display:none';confirmation.style='display:inline'" class="simple_form iquestion_comment_form"
+              <div class="iquestion_comment_form-wrapper" *ngIf="question.isCommentActive">
+                <form class="simple_form iquestion_comment_form"
                   autocomplete="off" id="interview_question_comment" novalidate="novalidate" action="" accept-charset="UTF-8"
                   data-remote="true" method="post">
                   <input name="utf8" type="hidden" value="✓">
-                  <fieldset class="form-fieldset iquestion_comment_form-fieldset" id="commentForm">
+                  <fieldset class="form-fieldset iquestion_comment_form-fieldset" *ngIf="!question.isCommentSent">
                     <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
                       <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
                         type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
@@ -86,12 +86,12 @@
                       <div class="iquestion_comment_form-footer_right">
                         <div class="form-actions is-right_aligned no_flexbox-form_submit">
                           <button class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button"
-                            type="submit">Submit a Comment</button>
+                            type="button" (click)='sendComment(question)' >Submit a Comment</button>
                         </div>
                       </div>
                     </div>
                   </fieldset>
-                  <div class="iquestion_comment_form-thank" id="confirmation">
+                  <div class="iquestion_comment_form-thank" *ngIf="question.isCommentSent">
                     <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
                     <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
                   </div>
@@ -106,4 +106,3 @@
       </div>
     </main>
   </div>
-  

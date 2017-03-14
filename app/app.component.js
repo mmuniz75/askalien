@@ -20,22 +20,19 @@ var AppComponent = AppComponent_1 = (function () {
         this._askService.ask(this.userQuestion)
             .subscribe(function (questions) { return _this.questions = questions; }, function (error) { return _this.errorMessage = error; });
     };
-    AppComponent.prototype.showHidenAnswer = function (question) {
-        if (!question.isActive)
-            this.showAnswer(question);
-        else
-            this.hideAnswer(question);
+    AppComponent.prototype.getContent = function (question) {
+        var content = question.answer ? question.answer.content : '';
+        return content;
     };
-    AppComponent.prototype.showAnswer = function (question) {
+    AppComponent.prototype.switchAnswer = function (question) {
         var _this = this;
         if (!question.answer) {
             this._askService.getAnswer(question.number, this.userQuestion)
                 .subscribe(function (answer) { return question.answer = answer; }, function (error) { return _this.errorMessage = error; });
         }
-        question.isActive = true;
-    };
-    AppComponent.prototype.hideAnswer = function (question) {
-        question.isActive = false;
+        question.isActive = !question.isActive;
+        if (!question.isActive)
+            question.isCommentActive = false;
     };
     AppComponent.prototype.getQuestionClass = function (question) {
         return question.isActive ? AppComponent_1.ACTIVE_QUESTION_CLASS : AppComponent_1.DEACTIVE_QUESTION_CLASS;
@@ -43,12 +40,17 @@ var AppComponent = AppComponent_1 = (function () {
     AppComponent.prototype.getAnswerClass = function (question) {
         return question.isActive ? AppComponent_1.DISPLAY_ANSWER_CLASS : AppComponent_1.HIDE_ANSWER_CLASS;
     };
-    AppComponent.prototype.getContent = function (question) {
-        var content = question.answer ? question.answer.content : '';
-        return content;
-    };
     AppComponent.prototype.getLabelAnwerLink = function (question) {
         return question.isActive ? AppComponent_1.LABEL_ANSWER_HIDE : AppComponent_1.LABEL_ANSWER_VIEW;
+    };
+    AppComponent.prototype.getLabelCommnetLink = function (question) {
+        return question.isCommentActive ? AppComponent_1.LABEL_COMMENT_HIDE : AppComponent_1.LABEL_COMMENT_VIEW;
+    };
+    AppComponent.prototype.switchComment = function (question) {
+        question.isCommentActive = !question.isCommentActive;
+    };
+    AppComponent.prototype.sendComment = function (question) {
+        question.isCommentSent = true;
     };
     return AppComponent;
 }());
@@ -58,6 +60,8 @@ AppComponent.DISPLAY_ANSWER_CLASS = 'iquestion_answer-animation';
 AppComponent.HIDE_ANSWER_CLASS = 'iquestion_answer';
 AppComponent.LABEL_ANSWER_VIEW = 'View the answer →';
 AppComponent.LABEL_ANSWER_HIDE = 'Hide Answer';
+AppComponent.LABEL_COMMENT_VIEW = 'Comment';
+AppComponent.LABEL_COMMENT_HIDE = 'Close Comment';
 AppComponent = AppComponent_1 = __decorate([
     core_1.Component({
         selector: 'pm-app',

@@ -12,8 +12,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AskService {
 
-  //private static SERVER = "localhost:8080/mythidb";
-  private static SERVER = "mythidb-askalien.rhcloud.com";
+  private static SERVER = "localhost:8080/mythidb";
+  //private static SERVER = "mythidb-askalien.rhcloud.com";
 
   private _askUrl = 'http://' + AskService.SERVER + '/rest/question/ask?question=';
   private _anwerUrl = 'http://' + AskService.SERVER + '/rest/answer/detail?id=';

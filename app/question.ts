@@ -6,4 +6,6 @@ export interface IQuestion {
     qyestion: String;
     answer : IAnswer;
     isActive : Boolean;
+    isCommentActive : Boolean;
+    isCommentSent : Boolean;
 }
