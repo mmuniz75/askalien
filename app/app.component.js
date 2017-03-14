@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var ask_service_1 = require("./ask.service");
-var AppComponent = (function () {
+var AppComponent = AppComponent_1 = (function () {
     function AppComponent(_askService) {
         this._askService = _askService;
     }
@@ -20,9 +20,45 @@ var AppComponent = (function () {
         this._askService.ask(this.userQuestion)
             .subscribe(function (questions) { return _this.questions = questions; }, function (error) { return _this.errorMessage = error; });
     };
+    AppComponent.prototype.showHidenAnswer = function (question) {
+        if (!question.isActive)
+            this.showAnswer(question);
+        else
+            this.hideAnswer(question);
+    };
+    AppComponent.prototype.showAnswer = function (question) {
+        var _this = this;
+        if (!question.answer) {
+            this._askService.getAnswer(question.number)
+                .subscribe(function (answer) { return question.answer = answer; }, function (error) { return _this.errorMessage = error; });
+        }
+        question.isActive = true;
+    };
+    AppComponent.prototype.hideAnswer = function (question) {
+        question.isActive = false;
+    };
+    AppComponent.prototype.getQuestionClass = function (question) {
+        return question.isActive ? AppComponent_1.ACTIVE_QUESTION_CLASS : AppComponent_1.DEACTIVE_QUESTION_CLASS;
+    };
+    AppComponent.prototype.getAnswerClass = function (question) {
+        return question.isActive ? AppComponent_1.DISPLAY_ANSWER_CLASS : AppComponent_1.HIDE_ANSWER_CLASS;
+    };
+    AppComponent.prototype.getContent = function (question) {
+        var content = question.answer ? question.answer.content : '';
+        return content;
+    };
+    AppComponent.prototype.getLabelAnwerLink = function (question) {
+        return question.isActive ? AppComponent_1.LABEL_ANSWER_HIDE : AppComponent_1.LABEL_ANSWER_VIEW;
+    };
     return AppComponent;
 }());
-AppComponent = __decorate([
+AppComponent.DEACTIVE_QUESTION_CLASS = 'iquestion-wrapper';
+AppComponent.ACTIVE_QUESTION_CLASS = 'iquestion-wrapper is-active';
+AppComponent.DISPLAY_ANSWER_CLASS = 'iquestion_answer-animation';
+AppComponent.HIDE_ANSWER_CLASS = 'iquestion_answer';
+AppComponent.LABEL_ANSWER_VIEW = 'View the answer →';
+AppComponent.LABEL_ANSWER_HIDE = 'Hide Answer';
+AppComponent = AppComponent_1 = __decorate([
     core_1.Component({
         selector: 'pm-app',
         templateUrl: 'app/questions.component.html',
@@ -31,4 +67,5 @@ AppComponent = __decorate([
     __metadata("design:paramtypes", [ask_service_1.AskService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
+var AppComponent_1;
 //# sourceMappingURL=app.component.js.map

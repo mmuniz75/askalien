@@ -1,5 +1,9 @@
+import { IAnswer } from './answer';
+
 /* Defines the question entity */
 export interface IQuestion {
-    number: number;
-    qyestion: string;
+    number: Number;
+    qyestion: String;
+    answer : IAnswer;
+    isActive : Boolean;
 }
