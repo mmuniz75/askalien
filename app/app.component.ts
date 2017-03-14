@@ -43,7 +43,7 @@ export class AppComponent {
 
     showAnswer(question: IQuestion) {
         if (!question.answer) {
-            this._askService.getAnswer(question.number)
+            this._askService.getAnswer(question.number,this.userQuestion)
                 .subscribe(answer => question.answer = answer,
                            error => this.errorMessage = <any>error)
                 ;

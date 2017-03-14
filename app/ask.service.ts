@@ -12,8 +12,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AskService {
 
-  private static SERVER = "localhost:8080/mythidb";
-  //private SERVER = "mythidb-askalien.rhcloud.com";
+  //private static SERVER = "localhost:8080/mythidb";
+  private static SERVER = "mythidb-askalien.rhcloud.com";
 
   private _askUrl = 'http://' + AskService.SERVER + '/rest/question/ask?question=';
   private _anwerUrl = 'http://' + AskService.SERVER + '/rest/answer/detail?id=';
@@ -29,8 +29,8 @@ export class AskService {
   }
 
 
-  getAnswer(id: Number) : Observable<IAnswer> {
-        return this._http.get(this._anwerUrl + id)
+  getAnswer(id: Number,search:String) : Observable<IAnswer> {
+        return this._http.get(this._anwerUrl + id + "&search=" + search)
         .map((response: Response) => <IAnswer> response.json().answer)
         //.do(data => console.log('All: ' +  JSON.stringify(data)))
         .catch(this.handleError);

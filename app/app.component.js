@@ -29,7 +29,7 @@ var AppComponent = AppComponent_1 = (function () {
     AppComponent.prototype.showAnswer = function (question) {
         var _this = this;
         if (!question.answer) {
-            this._askService.getAnswer(question.number)
+            this._askService.getAnswer(question.number, this.userQuestion)
                 .subscribe(function (answer) { return question.answer = answer; }, function (error) { return _this.errorMessage = error; });
         }
         question.isActive = true;

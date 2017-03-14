@@ -18,7 +18,6 @@ require("rxjs/add/operator/map");
 var AskService = AskService_1 = (function () {
     function AskService(_http) {
         this._http = _http;
-        //private SERVER = "mythidb-askalien.rhcloud.com";
         this._askUrl = 'http://' + AskService_1.SERVER + '/rest/question/ask?question=';
         this._anwerUrl = 'http://' + AskService_1.SERVER + '/rest/answer/detail?id=';
     }
@@ -27,8 +26,8 @@ var AskService = AskService_1 = (function () {
             .map(function (response) { return response.json().questions; })
             .catch(this.handleError);
     };
-    AskService.prototype.getAnswer = function (id) {
-        return this._http.get(this._anwerUrl + id)
+    AskService.prototype.getAnswer = function (id, search) {
+        return this._http.get(this._anwerUrl + id + "&search=" + search)
             .map(function (response) { return response.json().answer; })
             .catch(this.handleError);
     };
@@ -38,7 +37,8 @@ var AskService = AskService_1 = (function () {
     };
     return AskService;
 }());
-AskService.SERVER = "localhost:8080/mythidb";
+//private static SERVER = "localhost:8080/mythidb";
+AskService.SERVER = "mythidb-askalien.rhcloud.com";
 AskService = AskService_1 = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
