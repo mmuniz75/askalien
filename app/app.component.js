@@ -47,10 +47,19 @@ var AppComponent = AppComponent_1 = (function () {
         return question.isCommentActive ? AppComponent_1.LABEL_COMMENT_HIDE : AppComponent_1.LABEL_COMMENT_VIEW;
     };
     AppComponent.prototype.switchComment = function (question) {
+        this.commentFormComments = '';
         question.isCommentActive = !question.isCommentActive;
+        question.isCommentSentFailed = false;
     };
     AppComponent.prototype.sendComment = function (question) {
-        question.isCommentSent = true;
+        this._askService.sendFeedBack(question.answer.questionId, this.commentFormName, this.commentFormEmail, this.commentFormComments)
+            .subscribe(function (data) {
+            question.isCommentSent = true;
+            question.isCommentSentFailed = false;
+        }, function (error) {
+            question.isCommentSent = false;
+            question.isCommentSentFailed = true;
+        });
     };
     return AppComponent;
 }());

@@ -20,6 +20,7 @@ var AskService = AskService_1 = (function () {
         this._http = _http;
         this._askUrl = 'http://' + AskService_1.SERVER + '/rest/question/ask?question=';
         this._anwerUrl = 'http://' + AskService_1.SERVER + '/rest/answer/detail?id=';
+        this._feedBackUrl = 'http://' + AskService_1.SERVER + '/rest/question/feedback';
     }
     AskService.prototype.ask = function (keyword) {
         return this._http.get(this._askUrl + keyword)
@@ -31,9 +32,20 @@ var AskService = AskService_1 = (function () {
             .map(function (response) { return response.json().answer; })
             .catch(this.handleError);
     };
+    AskService.prototype.sendFeedBack = function (questionId, name, email, comments) {
+        var headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        var options = new http_1.RequestOptions({ headers: headers, method: "post" });
+        var data = new http_1.URLSearchParams();
+        data.set('questionId', questionId.toString());
+        data.set('name', name.toString());
+        data.set('email', email.toString());
+        data.set('comments', comments.toString());
+        return this._http.post(this._feedBackUrl, data, options)
+            .catch(this.handleError);
+    };
     AskService.prototype.handleError = function (error) {
         console.error(error);
-        return Observable_1.Observable.throw(error.json().error || 'Server error');
+        return Observable_1.Observable.throw(error.message || 'Server error');
     };
     return AskService;
 }());

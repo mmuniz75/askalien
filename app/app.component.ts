@@ -26,6 +26,11 @@ export class AppComponent {
     questions: IQuestion[];
     userQuestion: String;
     errorMessage: string;
+
+    commentFormEmail: String;
+    commentFormName:String;
+    commentFormComments:String;
+
     
     constructor(private _askService: AskService) {
     }
@@ -71,11 +76,21 @@ export class AppComponent {
     }
 
     switchComment(question: IQuestion){
+        this.commentFormComments = '';
         question.isCommentActive = !question.isCommentActive;
+        question.isCommentSentFailed = false;
     }
 
     sendComment(question: IQuestion):void{
-        question.isCommentSent = true;
+        this._askService.sendFeedBack(question.answer.questionId,this.commentFormName,this.commentFormEmail,this.commentFormComments)
+        .subscribe(data => {
+            question.isCommentSent = true;
+            question.isCommentSentFailed = false;
+        }, error => {
+            question.isCommentSent = false;
+            question.isCommentSentFailed = true;
+        });
+        
     }
 
 }

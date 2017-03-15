@@ -8,4 +8,5 @@ export interface IQuestion {
     isActive : Boolean;
     isCommentActive : Boolean;
     isCommentSent : Boolean;
+    isCommentSentFailed : Boolean;
 }

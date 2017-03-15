@@ -70,13 +70,13 @@
                   <fieldset class="form-fieldset iquestion_comment_form-fieldset" *ngIf="!question.isCommentSent">
                     <div class="ui-textbox form-field js-field_wrapper string required interview_question_comment_name iquestion_comment_form-field">
                       <input class="string required input" x-autocompletetype="name" required="required" aria-required="true" placeholder="Name"
-                        type="text" name="interview_question_comment[name]" id="interview_question_comment_name"></div>
+                        type="text" [(ngModel)]='commentFormName' name="interview_question_comment[name]" id="interview_question_comment_name"></div>
                     <div class="ui-textbox form-field js-field_wrapper email required interview_question_comment_email iquestion_comment_form-field">
                       <input class="string email required input" x-autocompletetype="email" required="required" aria-required="true" placeholder="Email"
-                        type="email" name="interview_question_comment[email]" id="interview_question_comment_email"></div>
+                        type="email" [(ngModel)]='commentFormEmail' name="interview_question_comment[email]" id="interview_question_comment_email"></div>
                     <div class="ui-textarea form-field js-field_wrapper text required interview_question_comment_body field_with_hint iquestion_comment_form-field"
                       data-view="ui#autoexpand">
-                      <textarea class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
+                      <textarea [(ngModel)]='commentFormComments' class="text required input textarea" required="required" aria-required="true" placeholder="Enter your comment here"
                         name="interview_question_comment[body]" id="interview_question_comment_body"></textarea>
                       <span class="hint">Fields marked with an asterisk (<span class="iquestion_comment_form-hint_star">*</span>)
                       are required</span>
@@ -94,6 +94,9 @@
                   <div class="iquestion_comment_form-thank" *ngIf="question.isCommentSent">
                     <div class="iquestion_comment_form-thank_title">Comment submitted succesfully. Thank you.</div>
                     <div class="iquestion_comment_form-thank_text">We are going to review the comment and get back to you as soon as possible.</div>
+                  </div>
+                   <div class="iquestion_comment_form-thank" *ngIf="question.isCommentSentFailed">
+                    <div class="iquestion_comment_form-thank_title"><font color='red'>Not able to sent you comments try again.</font></div>
                   </div>
                 </form>
               </div>
