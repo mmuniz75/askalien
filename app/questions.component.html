@@ -17,7 +17,10 @@
             </div>
             <br>
             <button (click)='searchQuestion()' id="b" class="button is-green_candy is-medium has-arrow has-inline_arrow no_flexbox-form_submit_button iquestion_comment_form-submit_button">Have your answer</button>
-
+            
+            <a href="https://play.google.com/store/apps/details?id=edu.muniz.universeguide.mobile" target="_blank" align="center">
+							<img src="app/assets/images/android_store.png" alt="Avaliable to Android" style="width:128px;height:64px;border: 0;align:center" />
+						</a>
           </div>
 
         </div>
@@ -50,10 +53,9 @@
                   <div class="iquestion_answer-inner">
                     <div class="iquestion_answer-icon"></div>
                     <div class="iquestion_answer-body content_body is-small">
+                      <p *ngIf="question.answer && question.answer.link"><a href="{{question.answer.link}}" target="_blank">See this link</a></p>
                       <p [innerHTML]='getContent(question)'></p>
-                                            <!--
-                      <p>{{question.answer.date}}</p>
-                      -->
+                      <p *ngIf="question.answer">{{question.answer.date}}</p>
                     </div>
                   </div>
                   <div class="iquestion_answer-footer">

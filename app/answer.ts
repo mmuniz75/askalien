@@ -5,4 +5,5 @@ export interface IAnswer {
     content: String;
     date : Date;
     questionId: Number;
+    link: String
 }
