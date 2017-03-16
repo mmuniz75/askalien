@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild,ElementRef } from '@angular/core';
 import { AskService } from './ask.service';
 import { IQuestion } from './question';
 
@@ -31,14 +31,22 @@ export class AppComponent {
     commentFormName:String;
     commentFormComments:String;
 
+    searchDone : Boolean;
+
     
     constructor(private _askService: AskService) {
     }
 
     searchQuestion(): void {
+        this.searchDone = true;
         this._askService.ask(this.userQuestion)
             .subscribe(questions => this.questions = questions,
             error => this.errorMessage = <any>error);
+    }
+
+    resetSearchDone():void{
+        this.searchDone = false;
+        this.questions = null;
     }
 
     getContent(question: IQuestion): String {
@@ -51,12 +59,14 @@ export class AppComponent {
             this._askService.getAnswer(question.number,this.userQuestion)
                 .subscribe(answer => question.answer = answer,
                            error => this.errorMessage = <any>error)
+                           
                 ;
         }
 
         question.isActive = !question.isActive; 
         if(!question.isActive)
             question.isCommentActive = false;
+        
     }    
 
     getQuestionClass(question: IQuestion): String {

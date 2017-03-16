@@ -17,8 +17,13 @@ var AppComponent = AppComponent_1 = (function () {
     }
     AppComponent.prototype.searchQuestion = function () {
         var _this = this;
+        this.searchDone = true;
         this._askService.ask(this.userQuestion)
             .subscribe(function (questions) { return _this.questions = questions; }, function (error) { return _this.errorMessage = error; });
+    };
+    AppComponent.prototype.resetSearchDone = function () {
+        this.searchDone = false;
+        this.questions = null;
     };
     AppComponent.prototype.getContent = function (question) {
         var content = question.answer ? question.answer.content : '';
