@@ -1,4 +1,4 @@
-import { Component,ViewChild,ElementRef } from '@angular/core';
+import { Component,ViewChildren,ElementRef,QueryList } from '@angular/core';
 import { AskService } from './ask.service';
 import { IQuestion } from './question';
 
@@ -33,6 +33,7 @@ export class AppComponent {
 
     searchDone : Boolean;
 
+    @ViewChildren('divContent') divContent:QueryList<ElementRef>;
     
     constructor(private _askService: AskService) {
     }
@@ -49,24 +50,22 @@ export class AppComponent {
         this.questions = null;
     }
 
-    getContent(question: IQuestion): String {
-        let content = question.answer ? question.answer.content : '';
-        return content;
-    }
-
-    switchAnswer(question: IQuestion) {
+    
+    switchAnswer(question: IQuestion, posi: number) {
         if (!question.answer) {
             this._askService.getAnswer(question.number,this.userQuestion)
-                .subscribe(answer => question.answer = answer,
+                .subscribe(answer => {  question.answer = answer; 
+                                        question.isActive = true; 
+                                        this.divContent.toArray()[posi].nativeElement.innerHTML  = answer.content;
+                                        
+                                    },
                            error => this.errorMessage = <any>error)
-                           
                 ;
-        }
-
-        question.isActive = !question.isActive; 
-        if(!question.isActive)
-            question.isCommentActive = false;
-        
+        }else {
+            question.isActive = !question.isActive; 
+            if(!question.isActive)
+                question.isCommentActive = false;
+        }            
     }    
 
     getQuestionClass(question: IQuestion): String {

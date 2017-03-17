@@ -66,9 +66,9 @@
         <div class="iquestions_list">
 
 
-          <div [class]='getQuestionClass(question)' *ngFor='let question of questions'>
+          <div [class]='getQuestionClass(question)' *ngFor='let question of questions;let i = index'>
             <div class="iquestion-inner_border">
-              <div class="iquestion-inner" (click)='switchAnswer(question)'>
+              <div class="iquestion-inner" (click)='switchAnswer(question,i)'>
                 <div class="iquestion-icon"></div>
                 <div class="iquestion-info">
                   <div class="iquestion-info_body">
@@ -87,8 +87,9 @@
                   <div class="iquestion_answer-icon"></div>
                   <div class="iquestion_answer-body content_body is-small">
                     <p *ngIf="question.answer && question.answer.link"><a href="{{question.answer.link}}" target="_blank">See this link</a></p>
-                    <p [innerHTML]='getContent(question)'>{{getContent(question)}}</p>
-                    <p>{{getContent(question)}}</p>
+                    <!-- Not works when add Polymer -->
+                    <!-- p *ngIf="question.answer" [innerHTML]='question.answer.content'></p-->
+                    <p #divContent></p>
                     <p *ngIf="question.answer">{{question.answer.date}}</p>
                   </div>
                 </div>
@@ -174,9 +175,13 @@
         <p>Example:</p>
         <pre class="code">(krulian AND pleiadian) OR (zigs AND arcturians)</pre>
         <br>
+        <p>You can use * symbol to partial search. </p>
+        <p>Example :</p>
+        <pre class="code">pleiadi*</pre>
+        <br>
         <p>You can use ~ symbol to aproximade search. </p>
         <p>Example if you type wrong the ~ will try get some similar results as Google does :</p>
-        <pre class="code">pleiadi~</pre>
+        <pre class="code">pliadian~</pre>
 
     </div>
 

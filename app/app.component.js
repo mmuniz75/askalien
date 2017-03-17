@@ -25,19 +25,21 @@ var AppComponent = AppComponent_1 = (function () {
         this.searchDone = false;
         this.questions = null;
     };
-    AppComponent.prototype.getContent = function (question) {
-        var content = question.answer ? question.answer.content : '';
-        return content;
-    };
-    AppComponent.prototype.switchAnswer = function (question) {
+    AppComponent.prototype.switchAnswer = function (question, posi) {
         var _this = this;
         if (!question.answer) {
             this._askService.getAnswer(question.number, this.userQuestion)
-                .subscribe(function (answer) { return question.answer = answer; }, function (error) { return _this.errorMessage = error; });
+                .subscribe(function (answer) {
+                question.answer = answer;
+                question.isActive = true;
+                _this.divContent.toArray()[posi].nativeElement.innerHTML = answer.content;
+            }, function (error) { return _this.errorMessage = error; });
         }
-        question.isActive = !question.isActive;
-        if (!question.isActive)
-            question.isCommentActive = false;
+        else {
+            question.isActive = !question.isActive;
+            if (!question.isActive)
+                question.isCommentActive = false;
+        }
     };
     AppComponent.prototype.getQuestionClass = function (question) {
         return question.isActive ? AppComponent_1.ACTIVE_QUESTION_CLASS : AppComponent_1.DEACTIVE_QUESTION_CLASS;
@@ -76,6 +78,10 @@ AppComponent.LABEL_ANSWER_VIEW = 'View the answer →';
 AppComponent.LABEL_ANSWER_HIDE = 'Hide Answer';
 AppComponent.LABEL_COMMENT_VIEW = 'Comment';
 AppComponent.LABEL_COMMENT_HIDE = 'Close Comment';
+__decorate([
+    core_1.ViewChildren('divContent'),
+    __metadata("design:type", core_1.QueryList)
+], AppComponent.prototype, "divContent", void 0);
 AppComponent = AppComponent_1 = __decorate([
     core_1.Component({
         selector: 'pm-app',
