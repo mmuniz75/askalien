@@ -25,37 +25,32 @@
   }
 </style>
 
+
 <div class="layout_layer">
 
   <main class="layout-main">
 
 
     <div class="grid-row has-top_border is-gray">
-      <div class="grid-row-inner has-big_padding">
+      <div class="grid-row-inner has-big_padding" id="searchDiv">
         <paper-input (keydown)='resetSearchDone()' required type="text" [(ngModel)]='userQuestion' label="Seek a question" error-message="No questions found!"
           id="searchInput">
           <paper-icon-button suffix (click)='searchQuestion()' icon="search" alt="search" title="search"></paper-icon-button>
         </paper-input>
+        <paper-toast opened duration="2000" text="No questions found with your search !!" *ngIf='questions && questions.length==0 && searchDone'></paper-toast>
         <br>
         <div class="is-right_aligned form-actions is-right_aligned no_flexbox-form_submit">
 
-          <paper-button raised onclick="syntaxDialog.open()">
-            <iron-icon icon="icons:help-outline"></iron-icon>Improve your Search</paper-button>
+          <paper-button raised onclick="syntaxDialog.open()"><iron-icon icon="icons:help-outline"></iron-icon>Improve your Search</paper-button>
 
           <a href="https://play.google.com/store/apps/details?id=edu.muniz.universeguide.mobile" target="_blank" align="right" style="text-decoration:none">
             <paper-button raised>
               <iron-icon icon="icons:android"></iron-icon>Avaliable to Android</paper-button>
           </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid-row has-top_border is-gray" *ngIf='questions && questions.length==0 && searchDone'>
-      <div class="grid-row-inner has-big_padding">
-        <div class="iquestion_comment_form-thank">
-          <div class="iquestion_comment_form-thank_title">
-            <font color='red'>No question found with your search !!</font>
-          </div>
+          <a href="http://mythidb-askalien.rhcloud.com/ask/main.jsf" target="_blank" align="right" style="text-decoration:none">
+            <paper-button raised>
+              <iron-icon icon="icons:settings-backup-restore"></iron-icon>Old Version</paper-button>
+          </a>
         </div>
       </div>
     </div>
