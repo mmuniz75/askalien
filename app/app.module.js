@@ -28,6 +28,7 @@ AppModule = __decorate([
             angular2_polymer_1.PolymerElement('paper-dialog'),
             angular2_polymer_1.PolymerElement('paper-dialog-scrollable'),
             angular2_polymer_1.PolymerElement('paper-toast'),
+            angular2_polymer_1.PolymerElement('paper-spinner'),
             angular2_polymer_1.PolymerElement('paper-icon-button'),
             angular2_polymer_1.PolymerElement('iron-icon'),
         ],

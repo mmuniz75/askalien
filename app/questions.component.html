@@ -62,11 +62,13 @@
       </div>
     </div>
 
+    <div style="width: 10%; margin: 0px auto;">
+          <paper-spinner active *ngIf='searchProcessing'></paper-spinner>
+    </div>
+
     <div class="grid-row has-top_border is-gray" id="questions" *ngIf='questions && questions.length'>
       <div class="grid-row-inner has-big_padding">
-
         <div class="iquestions_list">
-
 
           <div [class]='getQuestionClass(question)' *ngFor='let question of questions;let i = index'>
             <div class="iquestion-inner_border">
@@ -82,6 +84,9 @@
                     <span>{{getLabelAnwerLink(question)}}</span></a>
                 </div>
               </div>
+            </div>
+            <div style="width: 10%; margin: 0px auto;">
+                <paper-spinner active *ngIf='questionProcessing[i]'></paper-spinner>
             </div>
             <div [class]='getAnswerClass(question)'>
               <div class="iquestion_answer-wrapper">
@@ -162,16 +167,20 @@
   <paper-dialog-scrollable>
     
     <div id="content">
-     
-        <p>You can use operators OR AND NOT (capital letters) to improve your search. </p>
+      <p>More words better results sort.</p>
+        <p>Examples :</p>
+        <pre class="code">physical characteristics humanoid</pre>
+        <pre class="code">Egyptian pyramids power</pre>
+        <br>
+         <p>You can use operators OR AND NOT (capital letters) to improve your search. </p>
         <p>Examples :</p>
         <pre class="code">alien AND starship</pre>
         <pre class="code">krulian OR pleiadian</pre>
         <pre class="code">alien AND NOT pleiadian</pre>
         <br>
         <p>You can use double quotes to a exactly match. </p>
-        <p>Example, to search just questions with krulian and ships together with a space in the middle :</p>
-        <pre class="code">"krulian ships"</pre>
+        <p>Example, to search just questions with night and walkers together with a space in the middle :</p>
+        <pre class="code">"night walkers"</pre>
         <br>
         <p>You can use parenteces to a complex search. </p>
         <p>Example:</p>

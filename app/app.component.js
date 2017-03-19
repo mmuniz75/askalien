@@ -17,9 +17,14 @@ var AppComponent = AppComponent_1 = (function () {
     }
     AppComponent.prototype.searchQuestion = function () {
         var _this = this;
+        this.searchProcessing = true;
         this.searchDone = true;
         this._askService.ask(this.userQuestion)
-            .subscribe(function (questions) { return _this.questions = questions; }, function (error) { return _this.errorMessage = error; });
+            .subscribe(function (questions) {
+            _this.questions = questions;
+            _this.searchProcessing = false;
+            _this.questionProcessing = new Array(questions.length);
+        }, function (error) { return _this.errorMessage = error; });
     };
     AppComponent.prototype.resetSearchDone = function () {
         this.searchDone = false;
@@ -28,9 +33,11 @@ var AppComponent = AppComponent_1 = (function () {
     AppComponent.prototype.switchAnswer = function (question, posi) {
         var _this = this;
         if (!question.answer) {
+            this.questionProcessing[posi] = true;
             this._askService.getAnswer(question.number, this.userQuestion)
                 .subscribe(function (answer) {
                 question.answer = answer;
+                _this.questionProcessing[posi] = false;
                 question.isActive = true;
                 _this.divContent.toArray()[posi].nativeElement.innerHTML = answer.content;
             }, function (error) { return _this.errorMessage = error; });

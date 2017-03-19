@@ -32,6 +32,8 @@ export class AppComponent {
     commentFormComments:String;
 
     searchDone : Boolean;
+    searchProcessing : Boolean;
+    questionProcessing : Boolean[];
 
     @ViewChildren('divContent') divContent:QueryList<ElementRef>;
     
@@ -39,9 +41,14 @@ export class AppComponent {
     }
 
     searchQuestion(): void {
+        this.searchProcessing = true;
         this.searchDone = true;
         this._askService.ask(this.userQuestion)
-            .subscribe(questions => this.questions = questions,
+            .subscribe(questions => {
+                                this.questions = questions
+                                this.searchProcessing = false;
+                                this.questionProcessing = new Array<Boolean>(questions.length);
+                       },
             error => this.errorMessage = <any>error);
     }
 
@@ -53,11 +60,12 @@ export class AppComponent {
     
     switchAnswer(question: IQuestion, posi: number) {
         if (!question.answer) {
+            this.questionProcessing[posi] = true;
             this._askService.getAnswer(question.number,this.userQuestion)
                 .subscribe(answer => {  question.answer = answer; 
+                                        this.questionProcessing[posi] = false;
                                         question.isActive = true; 
                                         this.divContent.toArray()[posi].nativeElement.innerHTML  = answer.content;
-                                        
                                     },
                            error => this.errorMessage = <any>error)
                 ;

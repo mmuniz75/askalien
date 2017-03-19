@@ -17,6 +17,7 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     PolymerElement('paper-dialog'),
     PolymerElement('paper-dialog-scrollable'),
     PolymerElement('paper-toast'),
+    PolymerElement('paper-spinner'),
     PolymerElement('paper-icon-button'),
     PolymerElement('iron-icon'),
   ],
