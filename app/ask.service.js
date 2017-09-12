@@ -49,8 +49,8 @@ var AskService = AskService_1 = (function () {
     };
     return AskService;
 }());
-//private static SERVER = "localhost:8080/mythidb";
-AskService.SERVER = "mythidb-askalien.rhcloud.com";
+//private static SERVER = "localhost:8080/mythidb-3.2";
+AskService.SERVER = "mythidb-askalien.a3c1.starter-us-west-1.openshiftapps.com";
 AskService = AskService_1 = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
