@@ -1,0 +1,10 @@
+**/*.ts
+**/*.json
+**/*.map
+**/*.log
+**/*.md
+api/
+static/
+typings/
+
+

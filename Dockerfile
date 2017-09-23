@@ -1,14 +1,22 @@
-FROM node
 
-ENV HOME=/usr/src/app
-RUN mkdir $HOME
-WORKDIR $HOME
+FROM nginx:1.13.5-alpine
 
-COPY . .
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
-RUN npm install
+RUN rm -rf /usr/share/nginx/html/*
+
+COPY . /usr/share/nginx/html
+
+RUN rm -rf /usr/share/nginx/html/nginx
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+RUN touch /var/run/nginx.pid && \
+    chown -R nginx:0 /var/run/nginx.pid && \
+    chmod -R ug+rw /var/run/nginx.pid && \
+    chown -R nginx:0 /var/cache/nginx && \
+   chmod -R ug+rw /var/cache/nginx
+
+CMD ["nginx", "-g", "daemon off;"]
 
