@@ -1,4 +1,9 @@
 
+#sudo docker build --build-arg ASKALIEN_SERVER=mythidb-askalien.a3c1.starter-us-west-1.openshiftapps.com -t askalien:mythi-search-remoto .
+#sudo docker build --build-arg ASKALIEN_SERVER=mythidb:8080 -t askalien:mythi-search-local .
+#sudo docker run -d -p 80:8080 --name mythi-search-local --link mythidb:mythidb askalien:mythi-search-local
+
+
 FROM node as node_files
 
 COPY package.json package.json
@@ -15,8 +20,12 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY . /usr/share/nginx/html
 COPY --from=node_files ./node_modules /usr/share/nginx/html/node_modules
 
-RUN rm -rf /usr/share/nginx/html/nginx && rm -rf /usr/share/nginx/html/*.json 
+ARG ASKALIEN_SERVER
 
+RUN rm -rf /usr/share/nginx/html/nginx && \
+    rm -rf /usr/share/nginx/html/*.json && \
+    sed -i -e 's|${ASKALIEN_SERVER}|'${ASKALIEN_SERVER}'|g' /usr/share/nginx/html/app/ask.service.js
+    
 EXPOSE 8080
 
 RUN touch /var/run/nginx.pid && \
@@ -26,4 +35,5 @@ RUN touch /var/run/nginx.pid && \
    chmod -R ug+rw /var/cache/nginx
 
 CMD ["nginx", "-g", "daemon off;"]
+
 
