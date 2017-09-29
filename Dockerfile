@@ -6,7 +6,7 @@
 
 FROM node as node_files
 
-COPY package.json package.json
+COPY package_dist.json package.json
 
 RUN npm install
 
